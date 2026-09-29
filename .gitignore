@@ -1,0 +1,16 @@
+# Secrets — never commit
+Scrollow/GLMSecret.txt
+*.pem
+*.p8
+.env
+
+# Confidential workflow docs
+keytext*.md
+COMPETITOR_REPORT.md
+
+# Xcode
+DerivedData/
+build/
+*.xcuserstate
+xcuserdata/
+.DS_Store
