@@ -139,7 +139,8 @@
     (function() {
         var btn = document.getElementById('download-btn');
         var btnText = document.getElementById('btn-text');
-        if (btn && btn.href && btn.href.indexOf('6817533036') !== -1) {
+        var hasRealId = btn && btn.href && btn.href.indexOf('6817533036') !== -1;
+        if (btn && !hasRealId) {
             btn.href = '#';
             btn.onclick = function(e) { e.preventDefault(); alert('Coming Soon! This app will be available on the App Store soon.'); };
             if (btnText) btnText.textContent = 'Coming Soon to the App Store';
