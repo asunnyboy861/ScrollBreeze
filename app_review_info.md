@@ -1,4 +1,4 @@
-# App Review Information — Scrollow
+# App Review Information — ScrollBreeze
 
 ## Demo Account for Apple Review
 
@@ -27,9 +27,9 @@ If no AI backend is available, the app uses an honest "honor mode": the earned w
 - `scrollow.classic.lifetime` — $79.99 one-time (all non-cloud-AI features forever)
 
 ### Required Links (In-App)
-- Privacy Policy: https://asunnyboy861.github.io/Scrollow/privacy.html
-- Terms of Use: https://asunnyboy861.github.io/Scrollow/terms.html
-- Support Page: https://asunnyboy861.github.io/Scrollow/support.html
+- Privacy Policy: https://asunnyboy861.github.io/ScrollBreeze/privacy.html
+- Terms of Use: https://asunnyboy861.github.io/ScrollBreeze/terms.html
+- Support Page: https://asunnyboy861.github.io/ScrollBreeze/support.html
 
 These links are accessible from Settings → Legal & Support, and directly under the Subscribe button on the Paywall.
 
@@ -45,7 +45,7 @@ The app makes NO medical or therapeutic claims. Marketing copy is limited to "re
 - The app does not promote any specific AI provider in user-facing UI.
 
 ### Honest Enforcement Disclosure
-Deleting the Scrollow app removes the system-level shield (an OS limitation for all Screen Time apps). This is disclosed openly in marketing/FAQ as a trust commitment.
+Deleting the ScrollBreeze app removes the system-level shield (an OS limitation for all Screen Time apps). This is disclosed openly in marketing/FAQ as a trust commitment.
 
 ### China App Store Compliance
 This app does NOT reference ChatGPT/OpenAI in any user-facing UI or metadata. The AI feature uses generic BYO API Key wording ("Custom API Key").

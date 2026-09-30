@@ -2,7 +2,7 @@ import SwiftData
 import SwiftUI
 
 @main
-struct ScrollowApp: App {
+struct ScrollBreezeApp: App {
     @AppStorage("hasSeenOnboarding") private var hasSeenOnboarding = false
     @State private var showBreathSheet = false
     @State private var showOnboarding = false

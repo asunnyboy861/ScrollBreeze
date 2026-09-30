@@ -1,4 +1,4 @@
-# Improvement Plan — Scrollow (Iteration 1)
+# Improvement Plan — ScrollBreeze (Iteration 1)
 
 ## Phase A Analysis Summary
 

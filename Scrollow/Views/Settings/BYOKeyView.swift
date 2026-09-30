@@ -13,7 +13,7 @@ struct BYOKeyView: View {
                     Text("Use your own AI key")
                         .font(.title3.bold())
                         .foregroundStyle(.white)
-                    Text("Paste a Z.ai or BigModel API key to run AI task verification with your own balance — unlimited, and Scrollow never sees your calls beyond the request itself.")
+                    Text("Paste a Z.ai or BigModel API key to run AI task verification with your own balance — unlimited, and ScrollBreeze never sees your calls beyond the request itself.")
                         .font(.subheadline)
                         .foregroundStyle(.white.opacity(0.6))
 

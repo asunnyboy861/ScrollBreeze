@@ -15,7 +15,7 @@ struct PaywallView: View {
                     Image(systemName: "wind")
                         .font(.system(size: 44))
                         .foregroundStyle(Theme.ringGradient)
-                    Text("Scrollow Pro")
+                    Text("ScrollBreeze Pro")
                         .font(.title.bold())
                         .foregroundStyle(.white)
                     Text("The breathing unlock is free forever.\nPro is for those who want more.")
@@ -153,8 +153,8 @@ struct PaywallView: View {
 
     private var legalLinks: some View {
         HStack(spacing: 16) {
-            Link("Privacy Policy", destination: URL(string: "https://asunnyboy861.github.io/Scrollow/privacy.html")!)
-            Link("Terms of Use", destination: URL(string: "https://asunnyboy861.github.io/Scrollow/terms.html")!)
+            Link("Privacy Policy", destination: URL(string: "https://asunnyboy861.github.io/ScrollBreeze/privacy.html")!)
+            Link("Terms of Use", destination: URL(string: "https://asunnyboy861.github.io/ScrollBreeze/terms.html")!)
         }
         .font(.caption2)
         .foregroundStyle(Theme.teal)

@@ -4,9 +4,9 @@
 
 | Item | Value |
 |------|-------|
-| **Repository Name** | Scrollow |
-| **Git URL** | git@github.com:asunnyboy861/Scrollow.git |
-| **Repo URL** | https://github.com/asunnyboy861/Scrollow |
+| **Repository Name** | ScrollBreeze |
+| **Git URL** | git@github.com:asunnyboy861/ScrollBreeze.git |
+| **Repo URL** | https://github.com/asunnyboy861/ScrollBreeze |
 | **Visibility** | Public |
 | **Primary Language** | Swift |
 | **GitHub Pages** | ✅ **ENABLED** (from `/docs` folder) |
@@ -15,17 +15,17 @@
 
 | Page | URL | Status |
 |------|-----|--------|
-| Landing Page | https://asunnyboy861.github.io/Scrollow/ | ✅ Active |
-| Support | https://asunnyboy861.github.io/Scrollow/support.html | ✅ Active |
-| Privacy Policy | https://asunnyboy861.github.io/Scrollow/privacy.html | ✅ Active |
-| Terms of Use | https://asunnyboy861.github.io/Scrollow/terms.html | ✅ Active (subscription app) |
+| Landing Page | https://asunnyboy861.github.io/ScrollBreeze/ | ✅ Active |
+| Support | https://asunnyboy861.github.io/ScrollBreeze/support.html | ✅ Active |
+| Privacy Policy | https://asunnyboy861.github.io/ScrollBreeze/privacy.html | ✅ Active |
+| Terms of Use | https://asunnyboy861.github.io/ScrollBreeze/terms.html | ✅ Active (subscription app) |
 
 ## Repository Structure
 
 ```
-Scrollow/
-├── Scrollow.xcodeproj/            # Xcode Project (xcodegen)
-├── Scrollow/                      # iOS App Source Code
+ScrollBreeze/
+├── ScrollBreeze.xcodeproj/            # Xcode Project (xcodegen)
+├── ScrollBreeze/                      # iOS App Source Code
 │   ├── App/                       # Entry + deep link (scrollow://breathe)
 │   ├── Views/                     # Onboarding / Today / Breathe / Tasks / Gate / Settings / Components
 │   ├── ViewModels/                # GateModel / BreathModel / HomeModel / TaskModel / WeeklyModel

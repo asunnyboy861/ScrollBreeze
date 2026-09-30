@@ -222,7 +222,7 @@ struct ContactSupportView: View {
             email: email.trimmingCharacters(in: .whitespaces),
             subject: subject == .other ? customSubject : subject.rawValue,
             message: message,
-            app_name: "Scrollow")
+            app_name: "ScrollBreeze")
 
         var request = URLRequest(url: backendURL)
         request.httpMethod = "POST"

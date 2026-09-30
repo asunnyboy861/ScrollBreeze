@@ -1,57 +1,57 @@
-# Pricing Configuration — Scrollow
+# Pricing Configuration — ScrollBreeze
 
 ## Monetization Model: Subscription (IAP) + One-Time Buyout Tiers
 
 Free tier includes the complete core loop (breathing unlock is free forever). Pro is auto-renewable; BYO and Classic are non-consumable buyouts. Any feature consuming GLM cloud API is NEVER sold as a non-consumable (BYO excepted — user supplies their own key, zero platform AI cost).
 
 ## Subscription Group
-- **Group Name**: Scrollow Pro
-- **Reference Name**: Scrollow Pro
+- **Group Name**: ScrollBreeze Pro
+- **Reference Name**: ScrollBreeze Pro
 - **Products in group**: scrollow.pro.monthly, scrollow.pro.yearly (auto-renewable only)
 
 ## Subscription Tiers (Auto-Renewable)
 
 ### 1. Monthly Subscription
-- **Reference Name**: Scrollow Pro Monthly
+- **Reference Name**: ScrollBreeze Pro Monthly
 - **Product ID**: `scrollow.pro.monthly`
 - **Type**: Auto-renewable subscription
 - **Price**: $4.99 USD per month
-- **Display Name**: `Scrollow Pro Monthly` (20 chars, ≤35 ✅)
+- **Display Name**: `ScrollBreeze Pro Monthly` (20 chars, ≤35 ✅)
 - **Description**: `Unlimited gate apps, AI tasks, night gate` (41 chars, ≤55 ✅)
 - **Localization**: English (US)
-- **Subscription Group**: Scrollow Pro
+- **Subscription Group**: ScrollBreeze Pro
 - **Restore Purchases**: ✅ Required
 
 ### 2. Yearly Subscription
-- **Reference Name**: Scrollow Pro Annual
+- **Reference Name**: ScrollBreeze Pro Annual
 - **Product ID**: `scrollow.pro.yearly`
 - **Type**: Auto-renewable subscription
 - **Price**: $29.99 USD per year (50% savings vs monthly)
-- **Display Name**: `Scrollow Pro Annual` (19 chars, ≤35 ✅)
+- **Display Name**: `ScrollBreeze Pro Annual` (19 chars, ≤35 ✅)
 - **Description**: `All Pro features, 7-day free trial` (34 chars, ≤55 ✅)
 - **Localization**: English (US)
-- **Subscription Group**: Scrollow Pro (same group as monthly)
+- **Subscription Group**: ScrollBreeze Pro (same group as monthly)
 - **Restore Purchases**: ✅ Required
 
 ## One-Time Purchases (Non-Consumable)
 
 ### 1. BYO Lifetime
-- **Reference Name**: Scrollow BYO Lifetime
+- **Reference Name**: ScrollBreeze BYO Lifetime
 - **Product ID**: `scrollow.byo.lifetime`
 - **Type**: Non-consumable (one-time purchase, permanently unlocked)
 - **Price**: $49.99 USD (one-time)
-- **Display Name**: `Scrollow BYO Lifetime` (21 chars, ≤35 ✅)
+- **Display Name**: `ScrollBreeze BYO Lifetime` (21 chars, ≤35 ✅)
 - **Description**: `All Pro features with your own AI key` (37 chars, ≤55 ✅)
 - **Localization**: English (US)
 - **Restore Purchases**: ✅ Required
 - **Differentiation Note**: BYO includes ALL Pro features permanently; AI verification uses the USER'S OWN Z.ai/BigModel key (Keychain-stored) — unlimited AI calls at zero platform cost. Requires owning a BYO API key; without a key the user should pick Pro instead.
 
 ### 2. Classic Lifetime
-- **Reference Name**: Scrollow Classic
+- **Reference Name**: ScrollBreeze Classic
 - **Product ID**: `scrollow.classic.lifetime`
 - **Type**: Non-consumable (one-time purchase, permanently unlocked)
 - **Price**: $79.99 USD (one-time)
-- **Display Name**: `Scrollow Classic` (16 chars, ≤35 ✅)
+- **Display Name**: `ScrollBreeze Classic` (16 chars, ≤35 ✅)
 - **Description**: `All non-AI features forever, one-time` (37 chars, ≤55 ✅)
 - **Localization**: English (US)
 - **Restore Purchases**: ✅ Required

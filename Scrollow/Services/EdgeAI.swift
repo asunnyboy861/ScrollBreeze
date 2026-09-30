@@ -12,7 +12,7 @@ enum EdgeAI {
     static func weeklyInsight(summary: String) async -> String? {
         guard #available(iOS 26, *) else { return nil }
         return await FoundationModelsBridge.insight(prompt:
-            "You are Scrollow, a warm screen-time companion. Based on this weekly activity summary, " +
+            "You are ScrollBreeze, a warm screen-time companion. Based on this weekly activity summary, " +
             "write ONE friendly sentence (max 25 words) followed by ONE short suggestion. " +
             "Never use charts or lists. Never shame the user. Summary: \(summary)")
     }

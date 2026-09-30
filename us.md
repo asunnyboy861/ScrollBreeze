@@ -1,11 +1,11 @@
-# Scrollow — iOS Development Guide
+# ScrollBreeze — iOS Development Guide
 
 > Translated & structured from the Chinese operation guide (TR-20260916, 2026-09-16).
 > Source of truth for all phases: PHASE 2 (project config), PHASE 3 (pricing), PHASE 4+5 (code generation).
 
 ## Executive Summary
 
-**Scrollow** ("Scroll + Slow", rhymes with *pillow*) is a native SwiftUI screen-time mindfulness gatekeeper. Before opening a guarded app (TikTok, Instagram, …), the user must complete **3 breaths (~8s)** — or, alternatively, complete a **replacement-behavior task** (squats / walk / tidy desk) verified by **AI photo analysis** to earn a longer conscious-use window.
+**ScrollBreeze** ("Scroll + Slow", rhymes with *pillow*) is a native SwiftUI screen-time mindfulness gatekeeper. Before opening a guarded app (TikTok, Instagram, …), the user must complete **3 breaths (~8s)** — or, alternatively, complete a **replacement-behavior task** (squats / walk / tidy desk) verified by **AI photo analysis** to earn a longer conscious-use window.
 
 **Core loop**: urge → shield page with breathing ring → most users quit ("+12 min reclaimed today" 🎉) → those who need it pick a window (5/15/30 min) → OS-level auto relock when the window expires, guilt-free.
 
@@ -18,7 +18,7 @@
 6. **AI cost structure** — on-device Apple Foundation Models (iOS 26+) free; GLM only fires on the visual-verification moment (<1¢/call); BYO-key tier = zero platform AI cost.
 
 - **Tech stack**: SwiftUI + MVVM, FamilyControls / ManagedSettings / DeviceActivity / ShieldConfiguration (Screen Time API quartet), App Group, SwiftData, CloudKit, StoreKit 2, Apple Foundation Models (iOS 26+), GLM-5.3-Flash (api.z.ai).
-- **Bundle ID**: `com.zzoutuo.Scrollow` ｜ **Min iOS**: 17.0 ｜ **Targets**: Scrollow (app), ShieldConfigExtension, DeviceActivityExtension.
+- **Bundle ID**: `com.zzoutuo.Scrollow` ｜ **Min iOS**: 17.0 ｜ **Targets**: ScrollBreeze (app), ShieldConfigExtension, DeviceActivityExtension.
 - **App Group**: `group.com.scrollow.app`
 
 ## Competitive Analysis (verified 2026-09 via iTunes Search API + market reports)
@@ -35,7 +35,7 @@
 | RepsForReels ($4.99/mo) | AI pose verification → screen time | **Android only** — iOS gap! | We own the iOS gap: AI-verified exercise → window |
 | Floga (replication target) | Lifetime tiers validated ($109/$199/$349, $120K day-one); minimal aesthetic | Never touched Screen Time API; mindfulness disconnected from blocking | We integrate mindfulness INTO the highest-frequency blocking moment |
 
-**Category "unsolved triangle"**: enforcement × behavior change × price-friendly. No competitor holds all three. Scrollow does.
+**Category "unsolved triangle"**: enforcement × behavior change × price-friendly. No competitor holds all three. ScrollBreeze does.
 
 ## ⚠️ Feature Inventory (MANDATORY — Every Feature Must Be Listed)
 
@@ -43,14 +43,14 @@
 
 | # | Feature | User Operation Flow | Data Input | Processing | Data Output | Persistence | Acceptance Criteria |
 |---|---------|--------------------|------------|------------|-------------|-------------|---------------------|
-| 1 | Onboarding (3 screens, ≤60s, zero forms) | Open app → Screen 1: pick ≤3 apps via system FamilyActivityPicker → Screen 2: pick one intent ("Sleep better"/"Focus at work"/"Be present") → Screen 3: trial breath (3 cycles) → done; shield armed immediately | App selection tokens, intent string | Save selection + intent; arm ManagedSettings shield | Confirmation + playful copy ("You just said no to an imaginary Instagram") | FamilyActivitySelection JSON → App Group UD; intent → App Group UD | After onboarding, opening a guarded app shows the Scrollow shield page |
-| 2 | Gate management (FamilyControls) | Settings → Gate tab → authorize (.individual) → select apps | AuthorizationCenter status, FamilyActivitySelection | Store tokens in App Group; `store.shield.applications = tokens` | Shield applies to selected apps system-wide | Selection JSON in App Group UD (`group.com.scrollow.app`) | Kill Scrollow, reboot — shield still enforces |
-| 3 | Shield interception page (extension) | User taps guarded app → system presents shield | ApplicationToken | ShieldConfiguration extension renders static UI (no network/no unlock allowed by OS) | Deep-space gradient + breath-ring icon + "One scroll, three breaths." + buttons "Open Scrollow" / "Actually… no thanks 👋" | — (stateless) | Shield shows within ~1s of tapping guarded app; primary button deep-links to main app |
-| 4 | Breath ring engine | Shield → "Open Scrollow" deep link → breath page: ring expands 4s / contracts 4s × 3 cycles | None (time + haptics) | Minimum 8s validation (anti-tap-spam); haptic on each cycle; star-dust burst + notification haptic on completion | Ring animation, star dust, "+X min reclaimed today" | Breath completion event → SwiftData log; reclaimed minutes → App Group UD | Ring completes 3 cycles in ~8s; unlock button only enabled after ≥8s since shield tap |
+| 1 | Onboarding (3 screens, ≤60s, zero forms) | Open app → Screen 1: pick ≤3 apps via system FamilyActivityPicker → Screen 2: pick one intent ("Sleep better"/"Focus at work"/"Be present") → Screen 3: trial breath (3 cycles) → done; shield armed immediately | App selection tokens, intent string | Save selection + intent; arm ManagedSettings shield | Confirmation + playful copy ("You just said no to an imaginary Instagram") | FamilyActivitySelection JSON → App Group UD; intent → App Group UD | After onboarding, opening a guarded app shows the ScrollBreeze shield page |
+| 2 | Gate management (FamilyControls) | Settings → Gate tab → authorize (.individual) → select apps | AuthorizationCenter status, FamilyActivitySelection | Store tokens in App Group; `store.shield.applications = tokens` | Shield applies to selected apps system-wide | Selection JSON in App Group UD (`group.com.scrollow.app`) | Kill ScrollBreeze, reboot — shield still enforces |
+| 3 | Shield interception page (extension) | User taps guarded app → system presents shield | ApplicationToken | ShieldConfiguration extension renders static UI (no network/no unlock allowed by OS) | Deep-space gradient + breath-ring icon + "One scroll, three breaths." + buttons "Open ScrollBreeze" / "Actually… no thanks 👋" | — (stateless) | Shield shows within ~1s of tapping guarded app; primary button deep-links to main app |
+| 4 | Breath ring engine | Shield → "Open ScrollBreeze" deep link → breath page: ring expands 4s / contracts 4s × 3 cycles | None (time + haptics) | Minimum 8s validation (anti-tap-spam); haptic on each cycle; star-dust burst + notification haptic on completion | Ring animation, star dust, "+X min reclaimed today" | Breath completion event → SwiftData log; reclaimed minutes → App Group UD | Ring completes 3 cycles in ~8s; unlock button only enabled after ≥8s since shield tap |
 | 5 | Give-up celebration (the dopamine moment) | On shield "no thanks" OR after breathing user chooses "Not now" | Breath completion timestamp | Compute estimated reclaimed minutes; +1 water drop 💧 | Burst animation + "Reclaimed 12 min today" | reclaimedMinutesToday += N, waterDrops += 1 in App Group UD; event → SwiftData | Home screen big number increments; water drop count +1 |
 | 6 | Conscious-use window | After breath → choose 5 / 15 / 30 min (free: 5-min tier unlimited; 15-min free during intro?) | Selected minutes | `grant(windowMinutes:)` → unlockUntil = now + m*60 in App Group UD; clear ManagedSettings shield; schedule DeviceActivity relative-threshold relock event | "Enjoy it. We'll hold the door." → user manually returns to guarded app | unlockUntil (App Group UD — single source of truth) | Guarded app usable immediately; shield re-arms at window end WITHOUT app alive |
-| 7 | Auto-relock (DeviceActivity extension) | System event | DeviceActivityEvent threshold (relative usage seconds = window minutes*60) | `eventDidReachThreshold` / `intervalDidEnd` → relock: shield re-applied, unlockUntil = .distantPast | Shield reappears; optional gentle note "Door closed gently. See you." | Event log → SwiftData | Clock-change immune (relative threshold); relock fires after force-kill/reboot of Scrollow |
-| 8 | Home screen (Today tab) | Open Scrollow | App Group UD reads | Aggregate today's reclaimed minutes | ONE big number ("47 min reclaimed"), water-drop bottle (weekly), no charts | Reads App Group UD; history → SwiftData | Opens <1s; no infinite scroll; no red badges |
+| 7 | Auto-relock (DeviceActivity extension) | System event | DeviceActivityEvent threshold (relative usage seconds = window minutes*60) | `eventDidReachThreshold` / `intervalDidEnd` → relock: shield re-applied, unlockUntil = .distantPast | Shield reappears; optional gentle note "Door closed gently. See you." | Event log → SwiftData | Clock-change immune (relative threshold); relock fires after force-kill/reboot of ScrollBreeze |
+| 8 | Home screen (Today tab) | Open ScrollBreeze | App Group UD reads | Aggregate today's reclaimed minutes | ONE big number ("47 min reclaimed"), water-drop bottle (weekly), no charts | Reads App Group UD; history → SwiftData | Opens <1s; no infinite scroll; no red badges |
 | 9 | Replacement-task center (Pro) | On shield flow → "Earn a longer window" → task card (10 squats / 5-min walk / tidy desk) → take photo | JPEG photo (~100KB, in-memory only) | Verification chain: Apple Foundation Models (iOS 26+, on-device) → GLM-5.3-Flash vision (api.z.ai, 10s timeout, 1 retry) → honor mode (half duration) | Verdict {pass, confidence, reason}; on pass: ring turns green "Earned. Not borrowed." + 30-min window + 💧+1; on fail: gentle retry hint | Verdict → SwiftData; photo NEVER persisted (set nil immediately) | Pass grants 30-min window; no network + both AI fail → honor mode grants HALF duration, never fake-pass |
 | 10 | AI verification via GLM-5.3-Flash | Sub-flow of #9 | base64 JPEG + task prompt | POST https://api.z.ai/api/paas/v4/chat/completions, model glm-5.3-flash, temperature 0.1, response_format json_object, requestId idempotency dedup | JSON verdict; fail → retry (free retries) | requestId set in-memory | Duplicate photo submission does not double-charge; timeout → fallback chain |
 | 11 | Weekly insight (one sentence) | Sunday / weekly card on Home | SwiftData event logs → local aggregation | On-device summary; iOS 26+: Foundation Models one warm sentence + one suggestion; else GLM text (Pro) ; else template string | One sentence + one tappable suggestion ("Want a night gate? [yes]") | Weekly card cached locally | Never a chart wall; suggestion one-tap applies |
@@ -93,7 +93,7 @@
 - **Guideline 3.1.2**: trial price disclosed pre-purchase; Restore Purchases; cancel tutorial page.
 - **Health claims red line**: only "reduce screen time / build awareness" — NEVER medical/therapeutic claims.
 - **HIG**: dark-first deep-space blue (#0D1226), supports Light auto; SF Pro Display; 64pt bold hero number; haptics throughout; ≤400ms animations; Dynamic Type respected; accessibility labels on breath ring.
-- **Honesty marketing**: FAQ states deleting Scrollow removes protection (trust differentiator).
+- **Honesty marketing**: FAQ states deleting ScrollBreeze removes protection (trust differentiator).
 
 ## ⚠️ App Store Compliance — AI Features
 
@@ -134,9 +134,9 @@
 ## Module Structure
 
 ```
-Scrollow/
-├── Scrollow/                        # Main app target
-│   ├── ScrollowApp.swift            # Entry, deep-link (scrollow://breathe)
+ScrollBreeze/
+├── ScrollBreeze/                        # Main app target
+│   ├── ScrollBreezeApp.swift            # Entry, deep-link (scrollow://breathe)
 │   ├── Models/
 │   │   ├── AppGroupStore.swift      # Single source of truth
 │   │   ├── ReclaimTask.swift        # Task catalog

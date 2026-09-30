@@ -42,7 +42,7 @@ struct GateView: View {
                 }
                 Button("Cancel", role: .cancel) {}
             } message: {
-                Text("Scrollow needs Screen Time permission to guard your apps. You can grant it in system settings.")
+                Text("ScrollBreeze needs Screen Time permission to guard your apps. You can grant it in system settings.")
             }
         }
     }
@@ -55,7 +55,7 @@ struct GateView: View {
             Text("Arm your shield")
                 .font(.title3.bold())
                 .foregroundStyle(.white)
-            Text("Scrollow uses Apple's Screen Time APIs to guard the apps you pick. Works even when Scrollow is closed.")
+            Text("ScrollBreeze uses Apple's Screen Time APIs to guard the apps you pick. Works even when ScrollBreeze is closed.")
                 .font(.subheadline)
                 .foregroundStyle(.white.opacity(0.6))
                 .multilineTextAlignment(.center)

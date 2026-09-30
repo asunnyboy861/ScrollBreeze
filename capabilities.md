@@ -1,4 +1,4 @@
-# Scrollow — 配置文档
+# ScrollBreeze — 配置文档
 
 生成时间：2026-09-29
 
@@ -35,21 +35,21 @@
 **影响功能**：不创建产品则用户无法完成订阅/买断购买
 
 **配置步骤**：
-1. 打开 [App Store Connect](https://appstoreconnect.apple.com) → 我的 App → Scrollow → **Features → In-App Purchases**
-2. 创建订阅组 **Scrollow Pro**，然后创建以下 4 个产品：
+1. 打开 [App Store Connect](https://appstoreconnect.apple.com) → 我的 App → ScrollBreeze → **Features → In-App Purchases**
+2. 创建订阅组 **ScrollBreeze Pro**，然后创建以下 4 个产品：
 
 | 产品 | Reference Name | Product ID | 类型 | 价格 |
 |------|---------------|-----------|------|------|
-| 月付 | Scrollow Pro Monthly | `scrollow.pro.monthly` | 自动续订订阅 | $4.99/月 |
-| 年付 | Scrollow Pro Annual | `scrollow.pro.yearly` | 自动续订订阅 | $29.99/年（7 天免费试用）|
-| BYO 买断 | Scrollow BYO Lifetime | `scrollow.byo.lifetime` | 非消耗型 | $49.99 一次性 |
-| Classic 买断 | Scrollow Classic | `scrollow.classic.lifetime` | 非消耗型 | $79.99 一次性 |
+| 月付 | ScrollBreeze Pro Monthly | `scrollow.pro.monthly` | 自动续订订阅 | $4.99/月 |
+| 年付 | ScrollBreeze Pro Annual | `scrollow.pro.yearly` | 自动续订订阅 | $29.99/年（7 天免费试用）|
+| BYO 买断 | ScrollBreeze BYO Lifetime | `scrollow.byo.lifetime` | 非消耗型 | $49.99 一次性 |
+| Classic 买断 | ScrollBreeze Classic | `scrollow.classic.lifetime` | 非消耗型 | $79.99 一次性 |
 
 3. Display Name / Description 从 `price.md` 逐字复制（已按 35/55 字符上限校验）：
-   - 月付：`Scrollow Pro Monthly` / `Unlimited gate apps, AI tasks, night gate`
-   - 年付：`Scrollow Pro Annual` / `All Pro features, 7-day free trial`
-   - BYO：`Scrollow BYO Lifetime` / `All Pro features with your own AI key`
-   - Classic：`Scrollow Classic` / `All non-AI features forever, one-time`
+   - 月付：`ScrollBreeze Pro Monthly` / `Unlimited gate apps, AI tasks, night gate`
+   - 年付：`ScrollBreeze Pro Annual` / `All Pro features, 7-day free trial`
+   - BYO：`ScrollBreeze BYO Lifetime` / `All Pro features with your own AI key`
+   - Classic：`ScrollBreeze Classic` / `All non-AI features forever, one-time`
 4. 年付产品需配置 **7 天免费试用**（ introductory offer），试用前明示价格（Guideline 3.1.2）
 5. 本地测试：Xcode → File → New → StoreKit Configuration File，按上表录入即可跑通购买流程
 6. ⚠️ 产品创建后需等待 Apple 处理（通常 1-2 小时）才可在 App Store 测试
@@ -62,7 +62,7 @@
 **当前状态**：密钥文件框架已建好，等待你填入 key
 
 **配置步骤**：
-1. 打开项目中的 `Scrollow/GLMSecret.txt`（已被 .gitignore 排除，**绝不提交 git**）
+1. 打开项目中的 `ScrollBreeze/GLMSecret.txt`（已被 .gitignore 排除，**绝不提交 git**）
 2. 去掉最后一行注释 `#`，替换为你的真实 key（智谱 BigModel / Z.ai 统一 Key 体系）：
    ```
    你的APIKEY|https://api.z.ai/api/paas/v4/chat/completions|glm-5.3-flash
@@ -78,11 +78,11 @@
 **影响功能**：不配置则 Apple 审核员无法测试订阅/Screen Time/AI 功能，Guideline 2.1(a)/3.1.2 拒审风险
 
 **配置步骤**：
-1. App Store Connect → Scrollow → **App Review Information**
+1. App Store Connect → ScrollBreeze → **App Review Information**
 2. **Notes** 字段：粘贴 `app_review_info.md` 的 "Review Notes" 全部内容（含 Screen Time API 测试步骤、订阅产品 ID、AI BYO 声明、诚实披露）
-3. **Privacy Policy URL**：`https://asunnyboy861.github.io/Scrollow/privacy.html`
-4. **Terms of Use (EULA) URL**：`https://asunnyboy861.github.io/Scrollow/terms.html`（订阅 App 必填）
-5. **Support URL**：`https://asunnyboy861.github.io/Scrollow/support.html`
+3. **Privacy Policy URL**：`https://asunnyboy861.github.io/ScrollBreeze/privacy.html`
+4. **Terms of Use (EULA) URL**：`https://asunnyboy861.github.io/ScrollBreeze/terms.html`（订阅 App 必填）
+5. **Support URL**：`https://asunnyboy861.github.io/ScrollBreeze/support.html`
 6. 上架后：把 Apple 分配的 App ID 数字回填到 `docs/index.html` 的 `[APP_STORE_ID]`（替换后 Landing Page 按钮自动变为可下载）
 
 ---
@@ -129,8 +129,8 @@
 
 | 项目 | 说明 | 状态 |
 |------|------|------|
-| GitHub 仓库 | https://github.com/asunnyboy861/Scrollow | ✅ 已推送 |
-| GitHub Pages | https://asunnyboy861.github.io/Scrollow/ | ✅ 已启用 |
+| GitHub 仓库 | https://github.com/asunnyboy861/ScrollBreeze | ✅ 已推送 |
+| GitHub Pages | https://asunnyboy861.github.io/ScrollBreeze/ | ✅ 已启用 |
 | App Store 元数据 | keytext.md（17/17 验证通过）+ keytext_inventory.md | ✅ 已生成 |
 | 定价配置 | price.md（4 产品 + 合规清单） | ✅ 已生成 |
 | 审核资料 | app_review_info.md | ✅ 已生成 |
@@ -143,7 +143,7 @@
 
 ### Analysis
 
-检测自中文指南 + us.md 关键词（Screen Time API 四件套、App Group、CloudKit 同步、拍照、订阅、通知、深链 scrollow://）。工程经 xcodegen 自动创建：3 targets（Scrollow / ShieldConfigExtension / DeviceActivityExtension），DEVELOPMENT_TEAM=JP4TN5PTS3 项目级注入。
+检测自中文指南 + us.md 关键词（Screen Time API 四件套、App Group、CloudKit 同步、拍照、订阅、通知、深链 scrollow://）。工程经 xcodegen 自动创建：3 targets（ScrollBreeze / ShieldConfigExtension / DeviceActivityExtension），DEVELOPMENT_TEAM=JP4TN5PTS3 项目级注入。
 
 ### No Configuration Needed
 

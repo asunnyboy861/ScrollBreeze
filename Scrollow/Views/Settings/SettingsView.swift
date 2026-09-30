@@ -51,7 +51,7 @@ struct SettingsView: View {
             if purchaseManager.isPro || purchaseManager.byoOwned || purchaseManager.classicOwned {
                 HStack(spacing: 8) {
                     Image(systemName: "checkmark.seal.fill")
-                    Text("Pro unlocked — thanks for supporting Scrollow")
+                    Text("Pro unlocked — thanks for supporting ScrollBreeze")
                 }
                 .foregroundStyle(Theme.teal)
                 Button {
@@ -71,7 +71,7 @@ struct SettingsView: View {
                 }
             }
         } header: {
-            Text("Scrollow Pro")
+            Text("ScrollBreeze Pro")
                 .foregroundStyle(.white.opacity(0.6))
         } footer: {
             Text("Free tier is free forever. Cancel in 2 taps: Settings → Subscription.")
@@ -143,21 +143,21 @@ struct SettingsView: View {
 
     private var legalSection: some View {
         Section {
-            Link(destination: URL(string: "https://asunnyboy861.github.io/Scrollow/support.html")!) {
+            Link(destination: URL(string: "https://asunnyboy861.github.io/ScrollBreeze/support.html")!) {
                 HStack(spacing: 8) {
                     Image(systemName: "questionmark.circle")
                     Text("Support")
                 }
             }
             .foregroundStyle(.white)
-            Link(destination: URL(string: "https://asunnyboy861.github.io/Scrollow/privacy.html")!) {
+            Link(destination: URL(string: "https://asunnyboy861.github.io/ScrollBreeze/privacy.html")!) {
                 HStack(spacing: 8) {
                     Image(systemName: "hand.raised")
                     Text("Privacy Policy")
                 }
             }
             .foregroundStyle(.white)
-            Link(destination: URL(string: "https://asunnyboy861.github.io/Scrollow/terms.html")!) {
+            Link(destination: URL(string: "https://asunnyboy861.github.io/ScrollBreeze/terms.html")!) {
                 HStack(spacing: 8) {
                     Image(systemName: "doc.text")
                     Text("Terms of Use")
@@ -191,7 +191,7 @@ struct SettingsView: View {
     private var aboutSection: some View {
         Section {
             HStack {
-                Text("Scrollow — like pillow: scroll slow, sleep deep.")
+                Text("ScrollBreeze — like pillow: scroll slow, sleep deep.")
                     .font(.footnote)
                     .foregroundStyle(.white.opacity(0.5))
             }

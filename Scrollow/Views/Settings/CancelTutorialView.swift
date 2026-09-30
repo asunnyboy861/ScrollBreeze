@@ -12,7 +12,7 @@ struct CancelTutorialView: View {
                         .foregroundStyle(.white)
                     stepRow(1, "Open the Settings app (the gray gears icon)")
                     stepRow(2, "Tap your name → Subscriptions")
-                    stepRow(3, "Find Scrollow → Cancel Subscription")
+                    stepRow(3, "Find ScrollBreeze → Cancel Subscription")
                     Text("That's it. No dark patterns, no retention maze. Your Pro features stay active until the period ends.")
                         .font(.subheadline)
                         .foregroundStyle(.white.opacity(0.6))
